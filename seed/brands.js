@@ -79,10 +79,10 @@ const main = async () => {
   
   
 
-  await Parent.insertMany(parents) 
+  await Brands.insertMany(brands) 
 
   console.log('============================')
-  console.log('PARENTS have been seeded!')
+  console.log('Brands have been seeded!')
   console.log('============================')
 
 }
