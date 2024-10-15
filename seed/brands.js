@@ -1,5 +1,5 @@
 const db = require('../db')
-const { Parent } = require('../models')
+const { brands } = require('../models')
 
 
 
@@ -46,34 +46,34 @@ const main = async () => {
         yearEstablished: '1938',
       },
       {
-        name: '',
-        headquarters: '',
-        owner: '',
-        yearEstablished: '',
+        name: 'LG',
+        headquarters: 'Seoul, South Korea',
+        owner: 'Koo In-Hwoi',
+        yearEstablished: '1947',
       },
       {
-        name: '',
-        headquarters: '',
-        owner: '',
-        yearEstablished: '',
+        name: 'VIZIO',
+        headquarters: 'Irvine, CA',
+        owner: 'William Wang',
+        yearEstablished: '2002',
       },
       {
-        name: '',
-        headquarters: '',
-        owner: '',
-        yearEstablished: '',
+        name: 'Logitech',
+        headquarters: 'Lausanne, Switzerland',
+        owner: 'Hanneke Faber',
+        yearEstablished: '1969',
       },
       {
-        name: '',
-        headquarters: '',
-        owner: '',
-        yearEstablished: '',
+        name: 'Marantz',
+        headquarters: 'Carlsbad, CA',
+        owner: 'Saul Marantz',
+        yearEstablished: '1953',
       },
       {
-        name: '',
-        headquarters: '',
-        owner: '',
-        yearEstablished: '',
+        name: 'Sharp',
+        headquarters: 'Sakai, Osaka, Japan',
+        owner: 'Tokuji Hayakawa',
+        yearEstablished: '1912',
       },
     ]
   
