@@ -1,49 +1,97 @@
-'use strict';
+const db = require('../db')
+const { Parent } = require('../models')
 
-module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    // Seed the database with stereo equipment brands
-    await queryInterface.bulkInsert('Brands', [
+
+
+db.on('error', console.error.bind(console, 'MongoDB connection error:'))
+
+
+
+const main = async () => {
+    const brands = [
       {
         name: 'Sony',
-        country: 'Japan',
-        establishedYear: 1946,
-        createdAt: new Date(),
-        updatedAt: new Date()
+        headquarters:'Minato City, Tokyo, Japan' ,
+        owner: 'Kenichiro Yoshida',
+        yearEstablished: '1946',
       },
       {
         name: 'Bose',
-        country: 'USA',
-        establishedYear: 1964,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        name: 'Pioneer',
-        country: 'Japan',
-        establishedYear: 1938,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        name: 'Harman Kardon',
-        country: 'USA',
-        establishedYear: 1953,
-        createdAt: new Date(),
-        updatedAt: new Date()
+        headquarters: 'Framingham, Massachusetts, USA',
+        owner: 'Amar Bose',
+        yearEstablished: '1964',
       },
       {
         name: 'Yamaha',
-        country: 'Japan',
-        establishedYear: 1887,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      }
-    ], {});
-  },
+        headquarters: 'Iwata, Shizuoka, Japan',
+        owner: 'Hiroyuki Yanagi',
+        yearEstablished: '1887',
+      },
+      {
+        name: 'Denon',
+        headquarters: 'Shirakawa, Japan',
+        owner: 'Frederick Whitney Horn',
+        yearEstablished: '1910',
+      },
+      {
+        name: 'Devialet',
+        headquarters: 'Paris, France',
+        owner: 'Franck Lebouchard ',
+        yearEstablished: '2007',
+      },
+      {
+        name: 'Pioneer',
+        headquarters: 'Bunkyo City, Tokyo, Japan',
+        owner: 'Nozomu Matsumoto',
+        yearEstablished: '1938',
+      },
+      {
+        name: '',
+        headquarters: '',
+        owner: '',
+        yearEstablished: '',
+      },
+      {
+        name: '',
+        headquarters: '',
+        owner: '',
+        yearEstablished: '',
+      },
+      {
+        name: '',
+        headquarters: '',
+        owner: '',
+        yearEstablished: '',
+      },
+      {
+        name: '',
+        headquarters: '',
+        owner: '',
+        yearEstablished: '',
+      },
+      {
+        name: '',
+        headquarters: '',
+        owner: '',
+        yearEstablished: '',
+      },
+    ]
+  
+  
 
-  down: async (queryInterface, Sequelize) => {
-    // Remove all records from the Brands table
-    await queryInterface.bulkDelete('Brands', null, {});
-  }
-};
+  await Parent.insertMany(parents) 
+
+  console.log('============================')
+  console.log('PARENTS have been seeded!')
+  console.log('============================')
+
+}
+
+const run = async () => {
+
+  await main()
+  
+  db.close()
+}
+
+run()
