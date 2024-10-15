@@ -46,7 +46,7 @@ const main = async () => {
         yearEstablished: '1938',
       },
       {
-        name: 'LG',
+        name: 'LG Electronics',
         headquarters: 'Seoul, South Korea',
         owner: 'Koo In-Hwoi',
         yearEstablished: '1947',
@@ -70,7 +70,7 @@ const main = async () => {
         yearEstablished: '1953',
       },
       {
-        name: 'Sharp',
+        name: 'Sharp Corporation',
         headquarters: 'Sakai, Osaka, Japan',
         owner: 'Tokuji Hayakawa',
         yearEstablished: '1912',
