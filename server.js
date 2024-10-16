@@ -33,12 +33,6 @@ app.get('/', (req, res)=> { // request and response arguements
     res.send('Hello there! Welcome to my website!')
 })
 
-app.get('/*', (req, res)=> { // request and response arguements
-    res.send('404 - Webpage Not Found!')
-})
-
-
-
 
 
 
