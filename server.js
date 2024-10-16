@@ -70,6 +70,11 @@ app.get('/products/waterproof/', productController.getProductByWP)
 app.get('/products/notwaterproof/', productController.getProductByWP)
 app.get('/products/portable/', productController.getProductByPort)
 app.get('/products/notportable/', productController.getProductByNotPort)
+app.get('/products/wireless/', productController.getProductByWL)
+app.get('/products/notwireless/', productController.getProductByNotWL)
+app.get('/products/bluetooth/', productController.getProductByBT)
+app.get('/products/notbluetooth/', productController.getProductByNotBT)
+
 // CREATE - app.post
 /* POST Goes to INDEX route because we are creating something new */
 app.post('/products', productController.createProduct) // .post will create stuff!
