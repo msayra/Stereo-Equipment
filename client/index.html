@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./style.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     
-    <script src="./script.js"></script>
+    <script defer src="./script.js"></script>
 </head>
 
 <body>
@@ -21,6 +21,11 @@
 
 
     <img id="fancy-image" src="/image/ezgif.com-crop.jpg" />
+
+<div class="search-bar-container">
+    <input id="product-search-bar" type="text" placeholder="enter Product name here">
+    <button id="product-search-button">SEARCH!</button>
+</div>
 
 <div>
 
@@ -36,50 +41,7 @@
 </nav>
 
 <footer class="search-results-container">
-    <article class="search-result-item">
-        <img class="search-result-image" id="brand-image" src="https://cdn.worldvectorlogo.com/logos/sony-2.svg" alt="TEST BRAND IMAGE">
-        <img class="search-result-image" id="product-image" src="https://m.media-amazon.com/images/I/61vJ6wJG5fL.jpg" alt="TEST ITEM IMAGE">
-        <h3>TEST PRODUCT (Color)</h3>
-        <h4>$999.99</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsam obcaecati consequatur tenetur, iusto ea nisi, neque, voluptatibus expedita rerum unde! Illum debitis nesciunt laborum consequatur autem officia omnis tempora!</p>
-        <h5>Details</h5>
-        <ul>
-            <li>Wireless</li>
-            <li>Bluetooth</li>
-            <li>Waterproof</li>
-            <li>Portable</li>
-        </ul>
-    </article>
     <!-- This list will be long, populated by JS axios calls, make it scalable -->
-    <article class="search-result-item">
-        <img class="search-result-image" id="brand-image" src="https://cdn.worldvectorlogo.com/logos/sony-2.svg" alt="TEST BRAND IMAGE">
-        <img class="search-result-image" id="product-image" src="https://m.media-amazon.com/images/I/91HDZuw8QDL.jpg" alt="TEST ITEM IMAGE">
-        <h3>TEST PRODUCT (Color)</h3>
-        <h4>$999.99</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsam obcaecati consequatur tenetur, iusto ea nisi, neque, voluptatibus expedita rerum unde! Illum debitis nesciunt laborum consequatur autem officia omnis tempora!</p>
-        <h5>Details</h5>
-        <ul>
-            <li>Wireless</li>
-            <li>Bluetooth</li>
-            <li>Waterproof</li>
-            <li>Portable</li>
-        </ul>
-    </article>
-
-    <article class="search-result-item">
-        <img class="search-result-image" id="brand-image" src="https://cdn.worldvectorlogo.com/logos/yamaha-2-1.svg" alt="TEST BRAND IMAGE">
-        <img class="search-result-image" id="product-image" src="https://www.yamaha.com/yamahavgn/PIM/Images/01-rx-v6a-bl-ic_af031ac4310c970ea04e34c7ef7ab384.jpg" alt="TEST ITEM IMAGE">
-        <h3>TEST PRODUCT (Color)</h3>
-        <h4>$999.99</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsam obcaecati consequatur tenetur, iusto ea nisi, neque, voluptatibus expedita rerum unde! Illum debitis nesciunt laborum consequatur autem officia omnis tempora!</p>
-        <h5>Details</h5>
-        <ul>
-            <li>Wireless</li>
-            <li>Bluetooth</li>
-            <li>Waterproof</li>
-            <li>Portable</li>
-        </ul>
-    </article>
 </footer>
 
 </div>
