@@ -1,11 +1,20 @@
-body {
-    display: block;
-    flex-direction: column;
+#title {
+    background-color: rgb(12, 182, 225);
+    padding: 1px;
 }
 
-img {
-    scale: (0.8)
+
+h1 {
+    color: aliceblue;
 }
+
+
+
+img {
+    width: 91rem;
+    height: 25rem ;
+}
+
 
 .navbar ul {
     list-style: none;
@@ -15,7 +24,7 @@ img {
     overflow: hidden;
 }
 
-.navbar a {
+.navbar a{
     color:white;
     text-decoration: none;
     padding: 15px;
@@ -39,27 +48,4 @@ img {
     float: right;
 }
 
-.search-results-container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
-    transform: scale(1.0);
-}
 
-.search-result-item {
-    flex-direction: column;
-    flex-wrap: wrap;
-    transform: scale(1.0);
-}
-
-.search-result-image {
-    transform: scale(0.4);
-    align-items: flex-start;
-
-}
-
-#fancy-image {
-    width: 91rem;
-    height: 25rem;
-}
