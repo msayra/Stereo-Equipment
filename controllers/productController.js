@@ -28,6 +28,8 @@ const getProductById = async (req, res) => {
     }
 }
 
+
+
 const getProductByName = async (req, res) => {
     try {
     const { Name } = req.params
@@ -44,6 +46,76 @@ const getProductByName = async (req, res) => {
     }
     
 
+    const getProductByWP = async (req, res) => {
+        try {
+            const products = await Product.find({ isWaterProof: true });
+        if (products.length > 0) {
+        return res.json(products)
+        } return res.status(404).send(`Product with name of ${Name} not found!`) // Technically an else statement
+        } catch (error) {
+        if (error.name === 'CastError' && error.kind === 'ObjectId') { /* Higher order error handling */
+        return res.status(404).send(`That product doesn't exist`)
+        }
+        return res.status(500).send(error.message)
+        }
+        }
+
+        const getProductByNotWP = async (req, res) => {
+            try {
+                const products = await Product.find({ isWaterProof: false });
+            if (products.length > 0) {
+            return res.json(products)
+            } return res.status(404).send(`Product with name of ${Name} not found!`) // Technically an else statement
+            } catch (error) {
+            if (error.name === 'CastError' && error.kind === 'ObjectId') { /* Higher order error handling */
+            return res.status(404).send(`That product doesn't exist`)
+            }
+            return res.status(500).send(error.message)
+            }
+            }
+
+const getProductByPort = async (req, res) => {
+            try {
+                const products = await Product.find({ isPortable: true });
+            if (products.length > 0) {
+            return res.json(products)
+            } return res.status(404).send(`Product with name of ${Name} not found!`) // Technically an else statement
+            } catch (error) {
+            if (error.name === 'CastError' && error.kind === 'ObjectId') { /* Higher order error handling */
+            return res.status(404).send(`That product doesn't exist`)
+            }
+            return res.status(500).send(error.message)
+            }
+            }
+
+            const getProductByNotPort = async (req, res) => {
+                try {
+                    const products = await Product.find({ isPortable: true });
+                if (products.length > 0) {
+                return res.json(products)
+                } return res.status(404).send(`Product with name of ${Name} not found!`) // Technically an else statement
+                } catch (error) {
+                if (error.name === 'CastError' && error.kind === 'ObjectId') { /* Higher order error handling */
+                return res.status(404).send(`That product doesn't exist`)
+                }
+                return res.status(500).send(error.message)
+                }
+                }
+
+const getProductByBT = async (req, res) => {
+        try {
+            const products = await Product.find({ isBluetoothEnabled: true });
+            if (products.length > 0) {
+            return res.json(products)
+            } return res.status(404).send(`Product with name of ${Name} not found!`) // Technically an else statement
+                } catch (error) {
+                    if (error.name === 'CastError' && error.kind === 'ObjectId') { /* Higher order error handling */
+                    return res.status(404).send(`That product doesn't exist`)
+                }
+      return res.status(500).send(error.message)
+    }
+ }
+        
 // CREATE - app.post
 const createProduct = async (req, res) => {
     try {
@@ -86,6 +158,10 @@ module.exports = {
     getAllProducts,
     getProductById,
     getProductByName,
+    getProductByPort,
+    getProductByNotPort,
+    getProductByWP,
+    getProductByNotWP,
     createProduct,
     updateProduct,
     deleteProduct
