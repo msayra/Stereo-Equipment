@@ -33,13 +33,6 @@ app.get('/', (req, res)=> { // request and response arguements
     res.send('Hello there! Welcome to my website!')
 })
 
-app.get('/*', (req, res)=> { // request and response arguements
-    res.send('404 - Webpage Not Found!')
-})
-
-
-
-
 
 
 
@@ -94,8 +87,6 @@ app.get('/middleware', (req, res, next) => {
         {res.send('response complete')}
 )
 
-app.get('/*', (req, res)=> {
-    res.send({
-       error: '404 file not found'
-    })
+app.get('/*', (req, res)=> { // request and response arguements
+    res.send('404 - Webpage Not Found!')
 })
