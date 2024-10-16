@@ -13,7 +13,7 @@ const getAllProducts = async (req, res) => {
     }
 }
 // SHOW - app.get
-getProductById = async (req, res) => {
+const getProductById = async (req, res) => {
     try {
         const { id } = req.params
         const product = await Product.findById(id)
@@ -27,6 +27,23 @@ getProductById = async (req, res) => {
         return res.status(500).send(error.message)
     }
 }
+
+const getProductByName = async (req, res) => {
+    try {
+        const { Name } = req.params
+        const product = await Product.find({ name: { $regex: new RegExp(Name, 'i') } })
+        if (product.length > 0) {
+            return res.json(product)
+        } return res.status(404).send(`Product with name of ${Name} not found!`) // Technically an else statement
+    } catch (error) {
+        if (error.name === 'CastError' && error.kind === 'ObjectId') { /* Higher order error handling */
+            return res.status(404).send(`That product doesn't exist`)
+        }
+        return res.status(500).send(error.message)
+    }
+}
+
+
 
 // CREATE - app.post
 const createProduct = async (req, res) => {
@@ -69,6 +86,7 @@ const deleteProduct = async (req, res) => {
 module.exports = {
     getAllProducts,
     getProductById,
+    getProductByName,
     createProduct,
     updateProduct,
     deleteProduct
