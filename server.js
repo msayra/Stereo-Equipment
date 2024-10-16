@@ -42,9 +42,6 @@ app.get('/', (req, res)=> { // request and response arguements
 
 
 
-
-
-
 // INDEX - app.get
 app.get('/brands', brandController.getAllBrands)
 // SHOW - app.get

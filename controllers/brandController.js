@@ -16,7 +16,7 @@ const getAllBrands = async (req, res) => {
     }
 }
 // SHOW - app.get
-getBrandById = async (req, res) => {
+const getBrandById = async (req, res) => {
     try {
         const { id } = req.params
         const brand = await Brand.findById(id)
