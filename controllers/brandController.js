@@ -31,6 +31,20 @@ const getBrandById = async (req, res) => {
     }
 }
 
+const getBrandByName = async (req, res) => {
+    try {
+        const { Name } = req.params
+        const brand = await Brand.find({ name: { $regex: new RegExp(Name, 'i') } })
+        if (brand) {
+            return res.json(brand)
+        } return res.status(404).send(`Brand with id of ${id} not found!`) // Technically an else statement
+    } catch (error) {
+        if (error.name === 'CastError' && error.kind === 'ObjectId') { /* Higher order error handling */
+            return res.status(404).send(`That brand doesn't exist`)
+        }
+        return res.status(500).send(error.message)
+    }
+}
 // CREATE - app.post
 const createBrand = async (req, res) => {
     try {
@@ -72,6 +86,7 @@ const deleteBrand = async (req, res) => {
 module.exports = {
     getAllBrands,
     getBrandById,
+    getBrandByName,
     createBrand,
     updateBrand,
     deleteBrand

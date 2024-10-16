@@ -1,3 +1,14 @@
+#title {
+    background-color: rgb(12, 182, 225);
+    padding: 1px;
+}
+
+
+h1 {
+    color: aliceblue;
+}
+
+
 
 img {
     width: 91rem;
@@ -36,3 +47,5 @@ img {
 #sgnup {
     float: right;
 }
+
+
