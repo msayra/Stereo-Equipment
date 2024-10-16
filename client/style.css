@@ -1,7 +1,6 @@
-
-img {
-    width: 91rem;
-    height: 25rem ;
+body {
+    display: block;
+    flex-direction: column;
 }
 
 navbar {
@@ -27,3 +26,26 @@ navbar {
     background-color: #04AA6D;
     color: white;
   }
+
+.search-results-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    transform: scale(1.0);
+}
+
+.search-result-item {
+    flex-direction: column;
+    flex-wrap: wrap;
+    transform: scale(1.0);
+}
+
+.search-result-image {
+    transform: scale(0.5);
+}
+
+#fancy-image {
+    width: 91rem;
+    height: 25rem ;
+}
