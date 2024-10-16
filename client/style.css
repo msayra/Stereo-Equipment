@@ -32,7 +32,7 @@ img {
     text-align: center;
 }
 
-.navbar a:hover{
+.navbar li:hover{
     background-color: aqua;
 }
 

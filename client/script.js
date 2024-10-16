@@ -3,6 +3,16 @@
 const searchResultsContainer = document.querySelector('.search-results-container')
 const productSearchBar = document.querySelector('#product-search-bar')
 const productSearchButton = document.querySelector('#product-search-button')
+
+const waterproofButton = document.querySelector('#waterproof-button')
+const notwaterproofButton = document.querySelector('#not-waterproof-button')
+const portableButton = document.querySelector('#portable-button')
+const notportableButton = document.querySelector('#not-portable-button')
+const wirelessButton = document.querySelector('#wireless-button')
+const notwirelessButton = document.querySelector('#not-wireless-button')
+const bluetoothButton = document.querySelector('#bluetooth-button')
+const notbluetoothButton = document.querySelector('#not-bluetooth-button')
+
 /* INSERT EVENT LISTENERS HERE */
 
 productSearchButton.addEventListener('click', async () => { 

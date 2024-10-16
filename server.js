@@ -67,7 +67,7 @@ app.get('/products/id/:id', productController.getProductById)
 app.get('/products/name/:Name', productController.getProductByName)
 
 app.get('/products/waterproof/', productController.getProductByWP)
-app.get('/products/notwaterproof/', productController.getProductByWP)
+app.get('/products/notwaterproof/', productController.getProductByNotWP)
 app.get('/products/portable/', productController.getProductByPort)
 app.get('/products/notportable/', productController.getProductByNotPort)
 app.get('/products/wireless/', productController.getProductByWL)
