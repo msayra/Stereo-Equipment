@@ -4,27 +4,53 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./script.js"></script>
 </head>
+
 <body>
-    <div>
-    <h2> Free Shipping with a minimum purchase of $100  </h2>
-    </div>
-    <div>
-        <h1>Stereo Love  ⓒ  </h1>
-    </div>
-    <div>
+
+    <header>
+        <h1>Stereo Love ⓒ </h1>
+        <h2> Free Shipping with a minimum purchase of $100  </h2>
+    </header>
+
+    <div class="search-button-container">
         <!-- shrink to say shop all departments for a mobile view and have as a side bar -->
-        <div> <input type="text" placeholder="Shop by Brand">
-         <button>
+         <input type="text" placeholder="Shop by Brand">
+         <button id="brand-button">
             Search
          </button>
-    <img src="/image/ezgif.com-crop.jpg" />
-</div>
+         <input type="text" placeholder="Shop by Product">
+         <button id="product-button">
+            Search
+         </button>
+    </div>
+    <img id="fancy-image" src="/image/ezgif.com-crop.jpg" />
+
+<div>
+
 <navbar>
     Car Audio
     Home Audio
     TVs & Video
     Headphones
 </navbar>
+
+<footer class="search-results-container">
+    <article class="search-result-item">
+        <img class="search-result-image" id="brand-image" alt="TEST BRAND IMAGE">
+        <img class="search-result-image" id="product-image" src="https://m.media-amazon.com/images/I/61vJ6wJG5fL.jpg" alt="TEST ITEM IMAGE">
+        <h3>TEST PRODUCT (Color)</h3>
+        <h4>$999.99</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsam obcaecati consequatur tenetur, iusto ea nisi, neque, voluptatibus expedita rerum unde! Illum debitis nesciunt laborum consequatur autem officia omnis tempora!</p>
+        <h5>Details</h5>
+        <ul>
+            <li>Wireless</li>
+            <li>Bluetooth</li>
+            <li>Waterproof</li>
+            <li>Portable</li>
+        </ul>
+    </article>
+</footer>
+
 </div>
     
     
