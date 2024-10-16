@@ -1,13 +1,14 @@
 const db = require('../db')
-const { Parent } = require('../models')
-
-
+const { Brand } = require('../models')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 
 
 const main = async () => {
+
+  /* All brands written by Sayra */
+
     const brands = [
       {
         name: 'Sony',
@@ -46,43 +47,43 @@ const main = async () => {
         yearEstablished: '1938',
       },
       {
-        name: '',
-        headquarters: '',
-        owner: '',
-        yearEstablished: '',
+        name: 'LG Electronics',
+        headquarters: 'Seoul, South Korea',
+        owner: 'Koo In-Hwoi',
+        yearEstablished: '1947',
       },
       {
-        name: '',
-        headquarters: '',
-        owner: '',
-        yearEstablished: '',
+        name: 'VIZIO',
+        headquarters: 'Irvine, CA',
+        owner: 'William Wang',
+        yearEstablished: '2002',
       },
       {
-        name: '',
-        headquarters: '',
-        owner: '',
-        yearEstablished: '',
+        name: 'Logitech',
+        headquarters: 'Lausanne, Switzerland',
+        owner: 'Hanneke Faber',
+        yearEstablished: '1969',
       },
       {
-        name: '',
-        headquarters: '',
-        owner: '',
-        yearEstablished: '',
+        name: 'Marantz',
+        headquarters: 'Carlsbad, CA',
+        owner: 'Saul Marantz',
+        yearEstablished: '1953',
       },
       {
-        name: '',
-        headquarters: '',
-        owner: '',
-        yearEstablished: '',
+        name: 'Sharp Corporation',
+        headquarters: 'Sakai, Osaka, Japan',
+        owner: 'Tokuji Hayakawa',
+        yearEstablished: '1912',
       },
     ]
   
   
 
-  await Parent.insertMany(parents) 
+  await Brand.insertMany(brands) 
 
   console.log('============================')
-  console.log('PARENTS have been seeded!')
+  console.log('Brands have been seeded!')
   console.log('============================')
 
 }
