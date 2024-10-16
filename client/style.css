@@ -3,6 +3,10 @@ body {
     flex-direction: column;
 }
 
+img {
+    scale: (0.8)
+}
+
 .navbar ul {
     list-style: none;
     background-color: grey;
@@ -50,7 +54,9 @@ body {
 }
 
 .search-result-image {
-    transform: scale(0.5);
+    transform: scale(0.4);
+    align-items: flex-start;
+
 }
 
 #fancy-image {
