@@ -1,13 +1,14 @@
 const db = require('../db')
-const { brands } = require('../models')
-
-
+const { Brand } = require('../models')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 
 
 const main = async () => {
+
+  /* All brands written by Sayra */
+
     const brands = [
       {
         name: 'Sony',
@@ -79,7 +80,7 @@ const main = async () => {
   
   
 
-  await Brands.insertMany(brands) 
+  await Brand.insertMany(brands) 
 
   console.log('============================')
   console.log('Brands have been seeded!')
