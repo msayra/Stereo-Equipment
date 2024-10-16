@@ -42,7 +42,6 @@ app.get('/', (req, res)=> { // request and response arguements
 
 
 
-
 // INDEX - app.get
 app.get('/brands', brandController.getAllBrands)
 // SHOW - app.get
@@ -88,8 +87,6 @@ app.get('/middleware', (req, res, next) => {
         {res.send('response complete')}
 )
 
-app.get('/*', (req, res)=> {
-    res.send({
-       error: '404 file not found'
-    })
+app.get('/*', (req, res)=> { // request and response arguements
+    res.send('404 - Webpage Not Found!')
 })
