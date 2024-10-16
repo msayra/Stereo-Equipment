@@ -46,6 +46,10 @@ app.get('/', (req, res)=> { // request and response arguements
 app.get('/brands', brandController.getAllBrands)
 // SHOW - app.get
 app.get('/brands/:id', brandController.getBrandById)
+
+app.get('/brands/name/:Name', brandController.getBrandByName)
+
+//app.get('/brands/name/:Name', brandController.getBrandByName)
 // CREATE - app.post
 /* POST Goes to INDEX route because we are creating something new */
 app.post('/brands', brandController.createBrand) // .post will create stuff!
@@ -59,6 +63,8 @@ app.delete('/brands/:id', brandController.deleteBrand)
 app.get('/products', productController.getAllProducts)
 // SHOW - app.get
 app.get('/products/:id', productController.getProductById)
+
+app.get('/products/name/:Name', productController.getProductByName)
 // CREATE - app.post
 /* POST Goes to INDEX route because we are creating something new */
 app.post('/products', productController.createProduct) // .post will create stuff!
