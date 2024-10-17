@@ -1,13 +1,5 @@
 /* I think this should allow me to CRUD in JavaScript, meaning user can CRUD */
 
-// const db = require('./db')
-// const { Product, Brand } = require('./models')
-
-/* ChatGPT's solution doesn't work either */
-
-// import { db } from '../db'
-// import { Product } from '../models'
-
 /* ASK JEREMY AND THEM HOW TO DO THIS TOMMOROW MORNING */
 
 /* INSERT DOM VARIABLES HERE */
@@ -36,6 +28,8 @@ productSearchButton.addEventListener('click', async () => {
 
     let productsArray = await getProducts('name', productSearchBar)
 
+    /* Axios call */
+
     ClearSearchResults(searchResultsContainer)
 
     /* Meant to clear previous search results */
@@ -51,6 +45,8 @@ productSearchButton.addEventListener('click', async () => {
 colorSearchButton.addEventListener('click', async () => { 
 
     let productsArray = await getProducts('colors', colorSearchBar)
+
+    /* Axios call */
 
     ClearSearchResults(searchResultsContainer)
 
@@ -70,7 +66,7 @@ waterproofButton.addEventListener('click', async () => {
 
     let productsArray = await booleanSearch('waterproof')
 
-    
+    /* Axios call */
 
     ClearSearchResults(searchResultsContainer)
 
@@ -86,7 +82,7 @@ notwaterproofButton.addEventListener('click', async () => {
 
     let productsArray = await booleanSearch('notwaterproof')
 
-    
+    /* Axios call */
 
     ClearSearchResults(searchResultsContainer)
 
@@ -102,7 +98,7 @@ portableButton.addEventListener('click', async () => {
 
     let productsArray = await booleanSearch('portable')
 
-    
+    /* Axios call */
 
     ClearSearchResults(searchResultsContainer)
 
@@ -118,7 +114,7 @@ notportableButton.addEventListener('click', async () => {
 
     let productsArray = await booleanSearch('notportable')
 
-    
+    /* Axios call */
 
     ClearSearchResults(searchResultsContainer)
 
@@ -135,7 +131,7 @@ wirelessButton.addEventListener('click', async () => {
 
     let productsArray = await booleanSearch('wireless')
 
-    
+    /* Axios call */
 
     ClearSearchResults(searchResultsContainer)
 
@@ -151,7 +147,7 @@ notwirelessButton.addEventListener('click', async () => {
 
     let productsArray = await booleanSearch('notwireless')
 
-    
+    /* Axios call */
 
     ClearSearchResults(searchResultsContainer)
 
@@ -167,7 +163,7 @@ bluetoothButton.addEventListener('click', async () => {
     
     let productsArray = await booleanSearch('bluetooth')
 
-    
+    /* Axios call */
 
     ClearSearchResults(searchResultsContainer)
 
@@ -183,7 +179,7 @@ notbluetoothButton.addEventListener('click', async () => {
 
     let productsArray = await booleanSearch('notbluetooth')
 
-    
+    /* Axios call */
 
     ClearSearchResults(searchResultsContainer)
 
@@ -195,19 +191,28 @@ notbluetoothButton.addEventListener('click', async () => {
     
 })
 
-/* WORK IN PROGRESS: Delete item by ID function */
+/* Delete item by ID function */
 
 productDeleteButton.addEventListener('click', async () => {
 
     let targetOfDeletionID = deleteProductForm.value
 
-    // let foundProduct = await Product.findById(targetOfDeletionID)
+    let foundProduct = await axios.get(`http://localhost:3001/products/id/${targetOfDeletionID}`)
 
-    // console.log(foundProduct)
+    console.log('deleted', foundProduct.data.name)
 
-    alert(
-        `Still working on this - Jordan
-        ID of user input ${targetOfDeletionID}`)
+    console.log('====================')
+
+    let deletedProduct = await axios.delete(`http://localhost:3001/products/${targetOfDeletionID}`)
+
+    console.log('====================')
+
+    console.log(deletedProduct)
+
+    // alert(
+    //     `Still working on this - Jordan
+    //     ID of user input ${targetOfDeletionID}
+    //     product targeted: ${targetData}`)
 })
 
 /* INSERT FUNCTIONS HERE (Normal function notation, no arrows, so it can be hoisted) */
