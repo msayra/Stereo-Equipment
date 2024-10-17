@@ -1,13 +1,5 @@
 /* I think this should allow me to CRUD in JavaScript, meaning user can CRUD */
 
-// const db = require('./db')
-// const { Product, Brand } = require('./models')
-
-/* ChatGPT's solution doesn't work either */
-
-// import { db } from '../db'
-// import { Product } from '../models'
-
 /* ASK JEREMY AND THEM HOW TO DO THIS TOMMOROW MORNING */
 
 /* INSERT DOM VARIABLES HERE */
@@ -199,19 +191,28 @@ notbluetoothButton.addEventListener('click', async () => {
     
 })
 
-/* WORK IN PROGRESS: Delete item by ID function */
+/* Delete item by ID function */
 
 productDeleteButton.addEventListener('click', async () => {
 
     let targetOfDeletionID = deleteProductForm.value
 
-    // let foundProduct = await Product.findById(targetOfDeletionID)
+    let foundProduct = await axios.get(`http://localhost:3001/products/id/${targetOfDeletionID}`)
 
-    // console.log(foundProduct)
+    console.log('deleted', foundProduct.data.name)
 
-    alert(
-        `Still working on this - Jordan
-        ID of user input ${targetOfDeletionID}`)
+    console.log('====================')
+
+    let deletedProduct = await axios.delete(`http://localhost:3001/products/${targetOfDeletionID}`)
+
+    console.log('====================')
+
+    console.log(deletedProduct)
+
+    // alert(
+    //     `Still working on this - Jordan
+    //     ID of user input ${targetOfDeletionID}
+    //     product targeted: ${targetData}`)
 })
 
 /* INSERT FUNCTIONS HERE (Normal function notation, no arrows, so it can be hoisted) */
