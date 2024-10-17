@@ -41,8 +41,8 @@ const getProductById = async (req, res) => {
 
 const getProductByColour = async (req, res) => {
     try {
-    const { Colour } = req.params
-    const product = await Product.find({ name: { $regex: new RegExp(Colour, 'i') } })
+    const { colour } = req.params
+    const product = await Product.find({ color: { $regex: new RegExp(colour, 'i') } })
     if (product.length > 0) {
     return res.json(product)
     } return res.status(404).send(`Product with ${Colour} not found!`) // Technically an else statement
