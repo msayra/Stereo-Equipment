@@ -169,6 +169,22 @@ button#color-search-button {
     transform: scale(1.1); 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
+#product-description {
+    font-size: 1rem; /* Font size for description */
+    color: #00eee2; /* Gray color for description */
+    margin-bottom: 15px; /* Margin below description */
+  }
+#product-name {
+    font-size: 2rem; 
+    color: #333; 
+    margin: 10px 0; 
+  }
+.product-details-list {
+    list-style-type: square; 
+    padding-left: 20px; 
+    text-align: left; 
+    color: #555; 
+  }
 .product-images {
     display: flex; 
     justify-content: center; 
