@@ -66,6 +66,9 @@ app.get('/products/id/:id', productController.getProductById)
 
 app.get('/products/name/:Name', productController.getProductByName)
 
+app.get('/products/colors', productController.getAllColours)
+app.get('/products/colors/:colour', productController.getProductByColour)
+
 app.get('/products/waterproof/', productController.getProductByWP)
 app.get('/products/notwaterproof/', productController.getProductByWP)
 app.get('/products/portable/', productController.getProductByPort)
