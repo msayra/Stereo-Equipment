@@ -19,6 +19,10 @@ const notwirelessButton = document.querySelector('#not-wireless-button')
 const bluetoothButton = document.querySelector('#bluetooth-button')
 const notbluetoothButton = document.querySelector('#not-bluetooth-button')
 
+const clearSearchListButton = document.querySelector('#clear-search-list-button')
+
+
+
 const deleteProductForm = document.querySelector('#delete-product-form')
 const productDeleteButton = document.querySelector('#product-delete-button')
 
@@ -191,6 +195,10 @@ notbluetoothButton.addEventListener('click', async () => {
     
 })
 
+clearSearchListButton.addEventListener('click', async () => {
+    ClearSearchResults(searchResultsContainer)
+})
+
 /* Delete item by ID function */
 
 productDeleteButton.addEventListener('click', async () => {
@@ -261,9 +269,9 @@ function appendSearchResults(searchResultsContainer, productLogo, brandName, pro
         searchResultItem.innerHTML = 
         `<img class="search-result-image" id="brand-image" src="${productLogo}" alt="${brandName}">
         <img class="search-result-image" id="product-image" src="${productPic}" alt="${productName}">
-        <h3>${productName} - (${productColor})</h3>
+        <h3 id="product-name">${productName} - (${productColor})</h3>
         <h4>$${productPrice}</h4>
-        <p>${productDesc}</p>
+        <p id="product-description">${productDesc}</p>
         <p>ID: ${productID}</p>
         <h5>Details</h5>
         <ul>
