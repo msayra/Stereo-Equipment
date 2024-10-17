@@ -1,3 +1,15 @@
+/* I think this should allow me to CRUD in JavaScript, meaning user can CRUD */
+
+// const db = require('./db')
+// const { Product, Brand } = require('./models')
+
+/* ChatGPT's solution doesn't work either */
+
+// import { db } from '../db'
+// import { Product } from '../models'
+
+/* ASK JEREMY AND THEM HOW TO DO THIS TOMMOROW MORNING */
+
 /* INSERT DOM VARIABLES HERE */
 
 const searchResultsContainer = document.querySelector('.search-results-container')
@@ -188,6 +200,11 @@ notbluetoothButton.addEventListener('click', async () => {
 productDeleteButton.addEventListener('click', async () => {
 
     let targetOfDeletionID = deleteProductForm.value
+
+    // let foundProduct = await Product.findById(targetOfDeletionID)
+
+    // console.log(foundProduct)
+
     alert(
         `Still working on this - Jordan
         ID of user input ${targetOfDeletionID}`)
