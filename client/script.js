@@ -36,6 +36,8 @@ productSearchButton.addEventListener('click', async () => {
 
     let productsArray = await getProducts('name', productSearchBar)
 
+    /* Axios call */
+
     ClearSearchResults(searchResultsContainer)
 
     /* Meant to clear previous search results */
@@ -51,6 +53,8 @@ productSearchButton.addEventListener('click', async () => {
 colorSearchButton.addEventListener('click', async () => { 
 
     let productsArray = await getProducts('colors', colorSearchBar)
+
+    /* Axios call */
 
     ClearSearchResults(searchResultsContainer)
 
@@ -70,7 +74,7 @@ waterproofButton.addEventListener('click', async () => {
 
     let productsArray = await booleanSearch('waterproof')
 
-    
+    /* Axios call */
 
     ClearSearchResults(searchResultsContainer)
 
@@ -86,7 +90,7 @@ notwaterproofButton.addEventListener('click', async () => {
 
     let productsArray = await booleanSearch('notwaterproof')
 
-    
+    /* Axios call */
 
     ClearSearchResults(searchResultsContainer)
 
@@ -102,7 +106,7 @@ portableButton.addEventListener('click', async () => {
 
     let productsArray = await booleanSearch('portable')
 
-    
+    /* Axios call */
 
     ClearSearchResults(searchResultsContainer)
 
@@ -118,7 +122,7 @@ notportableButton.addEventListener('click', async () => {
 
     let productsArray = await booleanSearch('notportable')
 
-    
+    /* Axios call */
 
     ClearSearchResults(searchResultsContainer)
 
@@ -135,7 +139,7 @@ wirelessButton.addEventListener('click', async () => {
 
     let productsArray = await booleanSearch('wireless')
 
-    
+    /* Axios call */
 
     ClearSearchResults(searchResultsContainer)
 
@@ -151,7 +155,7 @@ notwirelessButton.addEventListener('click', async () => {
 
     let productsArray = await booleanSearch('notwireless')
 
-    
+    /* Axios call */
 
     ClearSearchResults(searchResultsContainer)
 
@@ -167,7 +171,7 @@ bluetoothButton.addEventListener('click', async () => {
     
     let productsArray = await booleanSearch('bluetooth')
 
-    
+    /* Axios call */
 
     ClearSearchResults(searchResultsContainer)
 
@@ -183,7 +187,7 @@ notbluetoothButton.addEventListener('click', async () => {
 
     let productsArray = await booleanSearch('notbluetooth')
 
-    
+    /* Axios call */
 
     ClearSearchResults(searchResultsContainer)
 
