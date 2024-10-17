@@ -15,6 +15,9 @@ const notwirelessButton = document.querySelector('#not-wireless-button')
 const bluetoothButton = document.querySelector('#bluetooth-button')
 const notbluetoothButton = document.querySelector('#not-bluetooth-button')
 
+const deleteProductForm = document.querySelector('#delete-product-form')
+const productDeleteButton = document.querySelector('#product-delete-button')
+
 /* INSERT EVENT LISTENERS HERE */
 
 productSearchButton.addEventListener('click', async () => { 
@@ -178,6 +181,16 @@ notbluetoothButton.addEventListener('click', async () => {
         await collectDataAndPopulateSearch(product)
     }
     
+})
+
+/* WORK IN PROGRESS: Delete item by ID function */
+
+productDeleteButton.addEventListener('click', async () => {
+
+    let targetOfDeletionID = deleteProductForm.value
+    alert(
+        `Still working on this - Jordan
+        ID of user input ${targetOfDeletionID}`)
 })
 
 /* INSERT FUNCTIONS HERE (Normal function notation, no arrows, so it can be hoisted) */
