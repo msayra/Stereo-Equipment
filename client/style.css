@@ -41,10 +41,7 @@ body{
     max-width: none;
     height: 45vw;
 }
-.product-image{
-    width:100%;
-    height: auto;
-}
+
 #productDesc{
     padding: 16px;
 }
@@ -169,12 +166,14 @@ button#color-search-button {
     transform: scale(1.1); 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
-.product-images {
+#product-image {
     display: flex; 
     justify-content: center; 
     align-items: center; 
     padding: 10px; 
     background-color: #f9f9f9;
+    width:100%;
+    height: auto;
   }
 .search-result-image {
     max-width: 120px; 
