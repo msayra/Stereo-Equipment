@@ -36,12 +36,18 @@ body{
     justify-content: center;
     align-items: center;
 }
-img {
-    width: 100vw;
+#fancy-image {
+    width: 80vw;
     max-width: none;
-    height: 25vw;
+    height: 45vw;
 }
-
+.product-image{
+    width:100%;
+    height: auto;
+}
+#productDesc{
+    padding: 16px;
+}
 
 .navbar ul {
     list-style: none;
@@ -52,7 +58,7 @@ img {
 }
 
 .navbar a{
-    color:white;
+    color:rgb(255, 255, 255);
     text-decoration: none;
     padding: 15px;
     display: block;
@@ -163,6 +169,32 @@ button#color-search-button {
     transform: scale(1.1); 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
+.product-images {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 10px; 
+    background-color: #f9f9f9;
+  }
+.search-result-image {
+    max-width: 120px; 
+    margin: 10px; 
+    border-radius: 10px; 
+  }
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; 
+  }
+  .product-card {
+    background-color: white; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s; 
+  }
 /*RESPONSIVE CODE*/
 @media screen and (max-width:800px) {
     header nav {
