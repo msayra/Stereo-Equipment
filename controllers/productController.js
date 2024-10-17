@@ -12,6 +12,17 @@ const getAllProducts = async (req, res) => {
         return res.status(500).send(error.message)
     }
 }
+
+const getAllColours = async (req, res) => {
+    try {
+        const products = await Product.find()
+        const uniqueColours = [...new Set(products.map(product => product.color))];
+        res.json(uniqueColours) /* Sends data in json format */
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+
 // SHOW - app.get
 const getProductById = async (req, res) => {
     try {
@@ -28,7 +39,20 @@ const getProductById = async (req, res) => {
     }
 }
 
-
+const getProductByColour = async (req, res) => {
+    try {
+    const { Colour } = req.params
+    const product = await Product.find({ name: { $regex: new RegExp(Colour, 'i') } })
+    if (product.length > 0) {
+    return res.json(product)
+    } return res.status(404).send(`Product with ${Colour} not found!`) // Technically an else statement
+    } catch (error) {
+    if (error.name === 'CastError' && error.kind === 'ObjectId') { /* Higher order error handling */
+    return res.status(404).send(`That product doesn't exist`)
+    }
+    return res.status(500).send(error.message)
+    }
+    }
 
 const getProductByName = async (req, res) => {
     try {
@@ -201,6 +225,8 @@ const deleteProduct = async (req, res) => {
 module.exports = {
     getAllProducts,
     getProductById,
+    getAllColours,
+    getProductByColour,
     getProductByName,
     getProductByPort,
     getProductByNotPort,
