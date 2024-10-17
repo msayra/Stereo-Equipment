@@ -17,13 +17,7 @@ const notbluetoothButton = document.querySelector('#not-bluetooth-button')
 
 productSearchButton.addEventListener('click', async () => { 
 
-    let userInput = productSearchBar.value // Collects search results for user input
-    /* Consider adding .toLowerCase() */
-
-    let response = await axios.get(`http://localhost:3001/products/name/${userInput}`)
-
-
-    let productsArray = response.data
+    let productsArray = await getProductsByName(productSearchBar)
 
     ClearSearchResults(searchResultsContainer)
 
@@ -37,6 +31,7 @@ productSearchButton.addEventListener('click', async () => {
         let productName = product.name
         let productPrice = product.price
         let productDesc = product.description
+        let productID = product._id
         let productPic = product.imageUrl
         let productColor = product.color
 
@@ -51,25 +46,358 @@ productSearchButton.addEventListener('click', async () => {
         console.log(productPic)
         console.log(productColor)
         console.log(productLogo)
+        console.log(productID)
         console.log('==================')
 
         /* Temporary name and format until HTML is finalized */
 
-        appendSearchResults(searchResultsContainer, productLogo, brandName, productPic, productName, productColor, productPrice, productDesc)
+        appendSearchResults(searchResultsContainer, productLogo, brandName, productPic, productName, productColor, productPrice, productDesc, productID)
+
     }
 
     /* Confirmation of data */
 })
 
+waterproofButton.addEventListener('click', async () => {
 
-/* INSER FUNCTIONS HERE (Normal function notation, no arrows, so it can be hoisted) */
+    let productsArray = await booleanSearch('waterproof')
 
+    
 
-function ClearSearchResults(searchResultsContainer) {
-    searchResultsContainer.innerHTML = ``
+    ClearSearchResults(searchResultsContainer)
+
+    for (product of productsArray) { /* This should populate the bottom of the page with ALL
+        search results Whenever search button is clicked. */
+
+        let responseBrand = await axios.get(`http://localhost:3001/brands/${product.brand_id}`)
+
+        let productName = product.name
+        let productPrice = product.price
+        let productDesc = product.description
+        let productID = product._id
+        let productPic = product.imageUrl
+        let productColor = product.color
+
+        productLogo = responseBrand.data.logo
+        brandName = responseBrand.data.name
+
+        /* Confirmation of data */
+        console.log('==================')
+        console.log(productName)
+        console.log(productPrice)
+        console.log(productDesc)
+        console.log(productPic)
+        console.log(productColor)
+        console.log(productLogo)
+        console.log(productID)
+        console.log('==================')
+
+        /* Temporary name and format until HTML is finalized */
+
+        appendSearchResults(searchResultsContainer, productLogo, brandName, productPic, productName, productColor, productPrice, productDesc, productID)
+    }
+    
+})
+
+notwaterproofButton.addEventListener('click', async () => {
+
+    let productsArray = await booleanSearch('notwaterproof')
+
+    
+
+    ClearSearchResults(searchResultsContainer)
+
+    for (product of productsArray) { /* This should populate the bottom of the page with ALL
+        search results Whenever search button is clicked. */
+
+        let responseBrand = await axios.get(`http://localhost:3001/brands/${product.brand_id}`)
+
+        let productName = product.name
+        let productPrice = product.price
+        let productDesc = product.description
+        let productID = product._id
+        let productPic = product.imageUrl
+        let productColor = product.color
+
+        productLogo = responseBrand.data.logo
+        brandName = responseBrand.data.name
+
+        /* Confirmation of data */
+        console.log('==================')
+        console.log(productName)
+        console.log(productPrice)
+        console.log(productDesc)
+        console.log(productPic)
+        console.log(productColor)
+        console.log(productLogo)
+        console.log(productID)
+        console.log('==================')
+
+        /* Temporary name and format until HTML is finalized */
+
+        appendSearchResults(searchResultsContainer, productLogo, brandName, productPic, productName, productColor, productPrice, productDesc, productID)
+    }
+    
+})
+
+portableButton.addEventListener('click', async () => {
+
+    let productsArray = await booleanSearch('portable')
+
+    
+
+    ClearSearchResults(searchResultsContainer)
+
+    for (product of productsArray) { /* This should populate the bottom of the page with ALL
+        search results Whenever search button is clicked. */
+
+        let responseBrand = await axios.get(`http://localhost:3001/brands/${product.brand_id}`)
+
+        let productName = product.name
+        let productPrice = product.price
+        let productDesc = product.description
+        let productID = product._id
+        let productPic = product.imageUrl
+        let productColor = product.color
+
+        productLogo = responseBrand.data.logo
+        brandName = responseBrand.data.name
+
+        /* Confirmation of data */
+        console.log('==================')
+        console.log(productName)
+        console.log(productPrice)
+        console.log(productDesc)
+        console.log(productPic)
+        console.log(productColor)
+        console.log(productLogo)
+        console.log(productID)
+        console.log('==================')
+
+        /* Temporary name and format until HTML is finalized */
+
+        appendSearchResults(searchResultsContainer, productLogo, brandName, productPic, productName, productColor, productPrice, productDesc, productID)
+    }
+    
+})
+
+notportableButton.addEventListener('click', async () => {
+
+    let productsArray = await booleanSearch('notportable')
+
+    
+
+    ClearSearchResults(searchResultsContainer)
+
+    for (product of productsArray) { /* This should populate the bottom of the page with ALL
+        search results Whenever search button is clicked. */
+
+        let responseBrand = await axios.get(`http://localhost:3001/brands/${product.brand_id}`)
+
+        let productName = product.name
+        let productPrice = product.price
+        let productDesc = product.description
+        let productID = product._id
+        let productPic = product.imageUrl
+        let productColor = product.color
+
+        productLogo = responseBrand.data.logo
+        brandName = responseBrand.data.name
+
+        /* Confirmation of data */
+        console.log('==================')
+        console.log(productName)
+        console.log(productPrice)
+        console.log(productDesc)
+        console.log(productPic)
+        console.log(productColor)
+        console.log(productLogo)
+        console.log(productID)
+        console.log('==================')
+
+        /* Temporary name and format until HTML is finalized */
+
+        appendSearchResults(searchResultsContainer, productLogo, brandName, productPic, productName, productColor, productPrice, productDesc, productID)
+    }
+
+    
+})
+
+wirelessButton.addEventListener('click', async () => {
+
+    let productsArray = await booleanSearch('wireless')
+
+    
+
+    ClearSearchResults(searchResultsContainer)
+
+    for (product of productsArray) { /* This should populate the bottom of the page with ALL
+        search results Whenever search button is clicked. */
+
+        let responseBrand = await axios.get(`http://localhost:3001/brands/${product.brand_id}`)
+
+        let productName = product.name
+        let productPrice = product.price
+        let productDesc = product.description
+        let productID = product._id
+        let productPic = product.imageUrl
+        let productColor = product.color
+
+        productLogo = responseBrand.data.logo
+        brandName = responseBrand.data.name
+
+        /* Confirmation of data */
+        console.log('==================')
+        console.log(productName)
+        console.log(productPrice)
+        console.log(productDesc)
+        console.log(productPic)
+        console.log(productColor)
+        console.log(productLogo)
+        console.log(productID)
+        console.log('==================')
+
+        /* Temporary name and format until HTML is finalized */
+
+        appendSearchResults(searchResultsContainer, productLogo, brandName, productPic, productName, productColor, productPrice, productDesc, productID)
+    }
+    
+})
+
+notwirelessButton.addEventListener('click', async () => {
+
+    let productsArray = await booleanSearch('notwireless')
+
+    
+
+    ClearSearchResults(searchResultsContainer)
+
+    for (product of productsArray) { /* This should populate the bottom of the page with ALL
+        search results Whenever search button is clicked. */
+
+        let responseBrand = await axios.get(`http://localhost:3001/brands/${product.brand_id}`)
+
+        let productName = product.name
+        let productPrice = product.price
+        let productDesc = product.description
+        let productID = product._id
+        let productPic = product.imageUrl
+        let productColor = product.color
+
+        productLogo = responseBrand.data.logo
+        brandName = responseBrand.data.name
+
+        /* Confirmation of data */
+        console.log('==================')
+        console.log(productName)
+        console.log(productPrice)
+        console.log(productDesc)
+        console.log(productPic)
+        console.log(productColor)
+        console.log(productLogo)
+        console.log(productID)
+        console.log('==================')
+
+        /* Temporary name and format until HTML is finalized */
+
+        appendSearchResults(searchResultsContainer, productLogo, brandName, productPic, productName, productColor, productPrice, productDesc, productID)
+    }
+    
+})
+
+bluetoothButton.addEventListener('click', async () => {
+    
+    let productsArray = await booleanSearch('bluetooth')
+
+    
+
+    ClearSearchResults(searchResultsContainer)
+
+    for (product of productsArray) { /* This should populate the bottom of the page with ALL
+        search results Whenever search button is clicked. */
+
+        let responseBrand = await axios.get(`http://localhost:3001/brands/${product.brand_id}`)
+
+        let productName = product.name
+        let productPrice = product.price
+        let productDesc = product.description
+        let productID = product._id
+        let productPic = product.imageUrl
+        let productColor = product.color
+
+        productLogo = responseBrand.data.logo
+        brandName = responseBrand.data.name
+
+        /* Confirmation of data */
+        console.log('==================')
+        console.log(productName)
+        console.log(productPrice)
+        console.log(productDesc)
+        console.log(productPic)
+        console.log(productColor)
+        console.log(productLogo)
+        console.log(productID)
+        console.log('==================')
+
+        /* Temporary name and format until HTML is finalized */
+
+        appendSearchResults(searchResultsContainer, productLogo, brandName, productPic, productName, productColor, productPrice, productDesc, productID)
+    }
+
+})
+
+notbluetoothButton.addEventListener('click', async () => {
+
+    let productsArray = await booleanSearch('notbluetooth')
+
+    
+
+    ClearSearchResults(searchResultsContainer)
+
+    for (product of productsArray) { /* This should populate the bottom of the page with ALL
+        search results Whenever search button is clicked. */
+
+        let responseBrand = await axios.get(`http://localhost:3001/brands/${product.brand_id}`)
+
+        let productName = product.name
+        let productPrice = product.price
+        let productDesc = product.description
+        let productID = product._id
+        let productPic = product.imageUrl
+        let productColor = product.color
+
+        productLogo = responseBrand.data.logo
+        brandName = responseBrand.data.name
+
+        /* Confirmation of data */
+        console.log('==================')
+        console.log(productName)
+        console.log(productPrice)
+        console.log(productDesc)
+        console.log(productPic)
+        console.log(productColor)
+        console.log(productLogo)
+        console.log(productID)
+        console.log('==================')
+
+        /* Temporary name and format until HTML is finalized */
+
+        appendSearchResults(searchResultsContainer, productLogo, brandName, productPic, productName, productColor, productPrice, productDesc, productID)
+    }
+    
+})
+
+/* INSERT FUNCTIONS HERE (Normal function notation, no arrows, so it can be hoisted) */
+
+/* Returns array of products matching user's name input */
+async function getProductsByName(searchBarElement) {
+    let userInput = searchBarElement.value
+    let response = await axios.get(`http://localhost:3001/products/name/${userInput}`)
+    return response.data
 }
 
-function appendSearchResults(searchResultsContainer, productLogo, brandName, productPic, productName, productColor, productPrice, productDesc) {
+/* Fills bottom of page with search results, of ALL items that fit provided criteria */
+function appendSearchResults(searchResultsContainer, productLogo, brandName, productPic, productName, productColor, productPrice, productDesc, productID) {
     let searchResultItem = document.createElement('article')
         searchResultItem.innerHTML = 
         `<img class="search-result-image" id="brand-image" src="${productLogo}" alt="${brandName}">
@@ -77,10 +405,22 @@ function appendSearchResults(searchResultsContainer, productLogo, brandName, pro
         <h3>${productName} - (${productColor})</h3>
         <h4>$${productPrice}</h4>
         <p>${productDesc}</p>
+        <p>ID: ${productID}</p>
         <h5>Details</h5>
         <ul>
             <li>(None)</li>
         </ul>`
 
         searchResultsContainer.appendChild(searchResultItem)
+}
+
+/* Sets criteria to whether or not an item is bluetooth/waterproof/wireless/portable */
+async function booleanSearch(categoryNameString) {
+    let response = await axios.get(`http://localhost:3001/products/${categoryNameString}`)
+    return response.data
+}
+
+/* Clears previous search results */
+function ClearSearchResults(searchResultsContainer) {
+    searchResultsContainer.innerHTML = ``
 }
