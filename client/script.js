@@ -245,6 +245,10 @@ async function collectDataAndPopulateSearch(product) {
         let productID = product._id
         let productPic = product.imageUrl
         let productColor = product.color
+        let waterproof = product.isWaterProof
+        let wireless = product.isWireless
+        let bluetooth = product.isBluetoothEnabled
+        let portable = product.isPortable
 
         productLogo = responseBrand.data.logo
         brandName = responseBrand.data.name
@@ -260,11 +264,11 @@ async function collectDataAndPopulateSearch(product) {
         console.log(productID)
         console.log('==================')
 
-        appendSearchResults(searchResultsContainer, productLogo, brandName, productPic, productName, productColor, productPrice, productDesc, productID)
+        appendSearchResults(searchResultsContainer, productLogo, brandName, productPic, productName, productColor, productPrice, productDesc, productID, waterproof, wireless, bluetooth, portable)
 }
 
 /* Fills bottom of page with search results, of ALL items that fit provided criteria */
-function appendSearchResults(searchResultsContainer, productLogo, brandName, productPic, productName, productColor, productPrice, productDesc, productID) {
+function appendSearchResults(searchResultsContainer, productLogo, brandName, productPic, productName, productColor, productPrice, productDesc, productID, waterproof, wireless, bluetooth, portable) {
     let searchResultItem = document.createElement('article')
         searchResultItem.innerHTML = 
         `<img class="search-result-image" id="brand-image" src="${productLogo}" alt="${brandName}">
@@ -275,8 +279,12 @@ function appendSearchResults(searchResultsContainer, productLogo, brandName, pro
         <p>ID: ${productID}</p>
         <h5>Details</h5>
         <ul>
-            <li>(None)</li>
+            <li>${waterproof ? 'Waterproof' : 'Vulnerable to water'}</li>
+            <li>${wireless ? 'Wireless' : 'Wired'}</li>
+            <li>${bluetooth ? 'Bluetooth' : 'NOT Bluetooth'}</li>
+            <li>${portable ? 'Portable' : 'NOT Portable'}</li>
         </ul>`
+        /* ternary saved the day! */
 
         searchResultsContainer.appendChild(searchResultItem)
 }
