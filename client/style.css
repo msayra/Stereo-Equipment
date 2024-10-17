@@ -115,25 +115,29 @@ button#color-search-button {
 }
 /*Slides Panel*/
 .container{
-    padding: 2 rem;
+    padding: 2rem;
 }
 
 .slider-wrapper{
     position: relative;
-    max-width: 48rem;
+    max-width: 100%;
     margin: 0 auto;
+    scrollbar-width: none;
 }
 .slider {
     display: flex;
-    aspect-ratio: 16/9;
+    aspect-ratio: 16 / 9;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     box-shadow:0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
     border-radius: 0.5rem;
+    width: 100%;
 }
 .slider img {
-    flex: 1 0 100%;
+    flex: 1 0 auto;
+    width: 100%;
+    height: auto;
     scroll-snap-align: start;
     object-fit:cover;
 }
@@ -146,12 +150,19 @@ button#color-search-button {
     transform: translateX(-50%);
     z-index: 1;
 }
-.slider-nav a {
-    width: 0.5;
+.slider-nav button {
+    background-color: rgba(255, 255, 255, 0.7); 
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%; 
+    transition: background-color 0.3s, transform 0.3s;
 }
-
-
-
+.slider-nav button:hover {
+    background-color: rgba(255, 255, 255, 1); 
+    transform: scale(1.1); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
 /*RESPONSIVE CODE*/
 @media screen and (max-width:800px) {
     header nav {
@@ -167,5 +178,7 @@ button#color-search-button {
     .search-bar {
         width: 100%;             
     }
+    .slider-wrapper {
+        max-width: 100%;
+    }
 }
-
