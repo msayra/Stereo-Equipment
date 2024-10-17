@@ -70,7 +70,7 @@ app.get('/products/colors', productController.getAllColours)
 app.get('/products/colors/:colour', productController.getProductByColour)
 
 app.get('/products/waterproof/', productController.getProductByWP)
-app.get('/products/notwaterproof/', productController.getProductByWP)
+app.get('/products/notwaterproof/', productController.getProductByNotWP)
 app.get('/products/portable/', productController.getProductByPort)
 app.get('/products/notportable/', productController.getProductByNotPort)
 app.get('/products/wireless/', productController.getProductByWL)
